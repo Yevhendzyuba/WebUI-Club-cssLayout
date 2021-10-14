@@ -407,10 +407,6 @@ hr {
     }
 }
 
-
-/* 1024 бургер + менший текст
-900 все в колонку + менший текст */
-
 @media screen and (max-width:920px) {
     .fans_container {
         width: 500px;
@@ -497,16 +493,3 @@ hr {
         margin-top: 150px;
     }
 }
-
-
-/* .winners {
-    display: flex;
-    height: 300px;
-}
-
-.winners_block {
-    display: flex;
-    width: 1920px;
-    justify-content: space-evenly;
-    align-items: flex-start;
-} */
