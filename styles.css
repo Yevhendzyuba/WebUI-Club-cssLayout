@@ -8,6 +8,7 @@ body {
     font-family: Rubik;
     line-height: 1.5;
     background-color: rgba(16, 7, 179, 0.879);
+    overflow-x: hidden;
 }
 
 ul {
@@ -21,7 +22,7 @@ a {
 .header {
     flex-direction: row;
     height: 60px;
-    width: 1920px;
+    width: 100%;
     position: fixed;
 }
 
@@ -79,7 +80,7 @@ a {
 
 .main_pic-link {
     height: 1080px;
-    width: 1920px;
+    width: 100%;
 }
 
 .header_logo-link {
@@ -125,12 +126,13 @@ a {
 }
 
 .winners {
+    display: flex;
     height: 300px;
-    width: 1920px;
 }
 
 .winners_block {
     display: flex;
+    width: 1920px;
     justify-content: space-evenly;
     align-items: flex-start;
 }
@@ -152,6 +154,7 @@ a {
 }
 
 .winners_logo-item {
+    display: flex;
     width: 300px;
     margin-top: 50px;
 }
@@ -311,4 +314,182 @@ hr {
     margin-left: 40px;
     border: 2px solid rgba(140, 32, 32, 0.879);
     border-radius: 8px;
+}
+
+.hamburger-menu {
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+@media screen and (max-width:1024px) {
+    * {
+        font-size: 13px;
+    }
+    .header {
+        opacity: 0;
+    }
+    .hamburger-menu {
+        opacity: 1;
+    }
+    #menu__toggle {
+        opacity: 0;
+    }
+    .menu__btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .menu__btn>span,
+    .menu__btn>span::before,
+    .menu__btn>span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: blue;
+    }
+    .menu__btn>span::before {
+        content: '';
+        top: -8px;
+    }
+    .menu__btn>span::after {
+        content: '';
+        top: 8px;
+    }
+    .menu__box {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        width: 170px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        text-align: center;
+        background-color: rgba(16, 7, 179, 0.5);
+        box-shadow: 1px 0px 6px rgba(16, 7, 179, 0.5);
+    }
+    .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    .menu__item:hover {
+        background-color: #CFD8DC;
+    }
+    #menu__toggle:checked~.menu__btn>span {
+        transform: rotate(45deg);
+    }
+    #menu__toggle:checked~.menu__btn>span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+    #menu__toggle:checked~.menu__btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    #menu__toggle:checked~.menu__box {
+        visibility: visible;
+        left: 0;
+    }
+}
+
+@media screen and (max-width:920px) {
+    .fans_container {
+        width: 500px;
+    }
+    .fans_container-lower {
+        width: 500px;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .info_container {
+        display: flex;
+        flex-direction: column;
+    }
+    .winners_block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:640px) {
+    #textarea_lower {
+        width: 300px;
+        height: 185px;
+    }
+    .send_btn {
+        margin-bottom: 45px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .winners_logo-item {
+        height: 150px;
+        width: 150px;
+    }
+    .winners_text {
+        width: 300px;
+        height: 100px;
+    }
+    .winners_block {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    #textarea_lower {
+        width: 200px;
+        height: 145px;
+    }
+    .send_btn {
+        margin-bottom: 80px;
+    }
+    .fans_container {
+        width: 350px;
+    }
+    .fans_container-lower {
+        width: 350px;
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width:360px) {
+    #textarea_lower {
+        width: 140px;
+        height: 90px;
+        margin-left: 45px;
+    }
+    .send_btn {
+        margin-bottom: 130px;
+        width: 50px;
+        margin-right: 35px;
+    }
+    .fans_container {
+        width: 230px;
+    }
+    .fans_container-lower {
+        width: 230px;
+        margin-top: 280px;
+    }
+    .textarea {
+        margin-top: 150px;
+    }
 }
